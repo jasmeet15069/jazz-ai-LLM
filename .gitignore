@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+*.log
+*.tmp
+*.safetensors
+*.bin
+*.pt
+*.pth
+knowledge/rendered_pages/
+from_scratch_checkpoint_on_jazz_server/model/model.safetensors

@@ -1,0 +1,37 @@
+{
+  "bundle": "Jazz AI V1.0 LLM files",
+  "created_for": "Jazz AI",
+  "internal_model_id": "jazz-ai-testing",
+  "display_name": "Jazz AI V1.0",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "notes": [
+    "Internal ID is unchanged for compatibility.",
+    "Treat old 'gwen' wording as Qwen.",
+    "Dating/texting coach behavior is implemented as a routing layer around the tiny local model.",
+    "Large weight files are intentionally gitignored."
+  ],
+  "paths": {
+    "local_bundle": "C:\\Users\\ACXIOM\\Desktop\\jazz_ai_llm",
+    "jazz_server_scratch_checkpoint": "root@45.79.124.28:/opt/texting-coding-model",
+    "jazz_backend": "root@45.79.124.28:/root/jazzai/server14.py",
+    "azure_training_project": "azureuser@74.225.235.134:/home/azureuser/llm-0_5b-from-scratch"
+  },
+  "included": [
+    "from_scratch_checkpoint_on_jazz_server/app",
+    "from_scratch_checkpoint_on_jazz_server/model",
+    "current_jazz_ai_testing_runtime/app.py",
+    "knowledge/advait_ai_knowledge.raw.md",
+    "knowledge/advait_ai_knowledge.coach.json",
+    "scripts/render_advait_pdf_pages.py",
+    "scripts/test_jazz_ai_v1_runtime.py",
+    "current_jazz_ai_testing_runtime/jazz-ai-testing-llm.service",
+    "current_jazz_ai_testing_runtime/jazz-ai-testing-tunnel.service",
+    "jazz_backend_integration/server14.py"
+  ],
+  "not_included_yet": [
+    {
+      "path": "azure_training_project_full",
+      "reason": "Azure SSH timed out during banner exchange at copy time."
+    }
+  ]
+}
