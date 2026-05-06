@@ -3,11 +3,13 @@
   "created_for": "Jazz AI",
   "internal_model_id": "jazz-ai-testing",
   "display_name": "Jazz AI V1.0",
-  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "base_model": "from_scratch_gpt2",
   "notes": [
     "Internal ID is unchanged for compatibility.",
-    "Treat old 'gwen' wording as Qwen.",
-    "Dating/texting coach behavior is implemented as a routing layer around the tiny local model.",
+    "Primary Jazz AI V1.0 runtime uses the scratch GPT-style checkpoint, not Qwen.",
+    "Qwen is preserved only as a backup runtime artifact.",
+    "Treat old 'gwen' wording as Qwen only when referring to the backup model family.",
+    "Dating/texting coach behavior is implemented as a routing layer around the from-scratch model.",
     "Large weight files are intentionally gitignored."
   ],
   "paths": {

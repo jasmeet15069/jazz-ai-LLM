@@ -2,17 +2,18 @@
 
 This folder contains the files currently available for the `jazz-ai-testing` model work.
 
-The internal compatibility ID remains `jazz-ai-testing`, but the user-facing display name is now `Jazz AI V1.0`. The active private runtime is Qwen-backed (`Qwen/Qwen2.5-0.5B-Instruct`), so any old "gwen" wording should be treated as `Qwen`.
+The internal compatibility ID remains `jazz-ai-testing`, but the user-facing display name is now `Jazz AI V1.0`.
+
+Primary runtime is the from-scratch GPT-style checkpoint under `from_scratch_checkpoint_on_jazz_server/model`. Qwen is only a separate backup/runtime artifact and must not be described as Jazz AI V1.0.
 
 ## Included
 
 - `from_scratch_checkpoint_on_jazz_server/`
   - Exported scratch checkpoint copied from `root@45.79.124.28:/opt/texting-coding-model/model`
-  - Original local FastAPI serving app copied from `root@45.79.124.28:/opt/texting-coding-model/app`
+  - Jazz AI V1.0 FastAPI serving app for the from-scratch checkpoint
 - `current_jazz_ai_testing_runtime/`
-  - Current Qwen-backed `Jazz AI V1.0` runtime app
-  - Azure systemd service
-  - Private tunnel systemd service
+  - Qwen-backed backup runtime app from the earlier deployment
+  - Azure systemd service and private tunnel service
 - `knowledge/`
   - Curated coach knowledge from `Advait AI Knowledge.pdf`
   - `advait_ai_knowledge.raw.md`
@@ -37,9 +38,10 @@ Azure SSH was timing out during this copy, so the full training source folder co
 
 - Jazz backend: `root@45.79.124.28:/root/jazzai/server14.py`
 - Backend port: `8000`
-- Private model tunnel on Jazz server: `127.0.0.1:18081`
-- Azure runtime service: `jazz-ai-testing-llm.service`
-- Azure tunnel service: `jazz-ai-testing-tunnel.service`
+- Primary scratch model service on Jazz server: `127.0.0.1:18080`
+- Scratch service: `texting-coding-llm.service`
+- Qwen backup tunnel on Jazz server: `127.0.0.1:18081`
+- Qwen backup Azure service: `jazz-ai-testing-llm.service`
 
 ## Behavior Targets
 
